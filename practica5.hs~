@@ -13,17 +13,8 @@ infixl 7 :=>:
 infixl 8 :<=>:
 
 -------------------- EJERCICIO 1 --------------------
-conjunto :: Eq a => [a] -> [a]
-conjunto [] = []
-conjunto (x:xs) = x : conjunto [y | y <- xs, y /= x]
 variables :: Formula -> [Var]
-variables (Atom var) = [var]
-variables (Neg formula) = variables formula
-variables (f1 :&: f2) = conjunto (variables f1 ++ variables f2)
-variables (f1 :|: f2) = conjunto (variables f1 ++ variables f2)
-variables (f1 :=>: f2) = conjunto (variables f1 ++ variables f2)
-variables (f1 :<=>: f2) = conjunto (variables f1 ++ variables f2)
-
+variables _ = undefined
 -----------------------------------------------------
 
 -------------------- EJERCICIO 2 --------------------
